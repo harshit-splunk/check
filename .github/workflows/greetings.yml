@@ -5,11 +5,11 @@ on:
 
 jobs:
   greeting:
-    if: contains(github.event.pull_request.labels.*.name, 'safe to test')
     runs-on: ubuntu-latest
     permissions:
       issues: write
       pull-requests: write
+    if: contains(github.event.pull_request.labels.*.name, 'safe to test')
     steps:
     - uses: actions/first-interaction@v1
       with:
